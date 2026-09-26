@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUXORA | Premium Shopping</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="logo">
+            <span>LUX</span>ORA
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="icon-btn" onclick="openSearch()">
+                🔍
+            </button>
+
+            <button class="icon-btn" onclick="showWishlist()">
+                ♡
+                <span class="badge" id="wishlistCount">0</span>
+            </button>
+
+            <button class="icon-btn" onclick="showCart()">
+                🛒
+                <span class="badge" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= SEARCH ================= -->
+<div class="search-box" id="searchBox">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+        autocomplete="off"
+    >
+
+    <button class="search-button" onclick="searchProducts()">
+        Search
+    </button>
+
+    <button class="close-search" onclick="closeSearch()">
+        ✕
+    </button>
+
+</div>
+    
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO LUXORA</p>
+
+            <h1>
+                Discover Your
+                <span>Perfect Style</span>
+            </h1>
+
+            <p>
+                Explore premium products, elegant fashion,
+                modern accessories and everyday essentials
+                carefully selected for you.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="btn primary">
+                    Shop Now
+                </a>
+
+                <a href="#categories" class="btn secondary">
+                    Explore Categories
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80"
+                alt="Luxury Shopping"
+            >
+
+            <div class="floating-card">
+                <strong>50% OFF</strong>
+                <span>Selected Products</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TRUST ================= -->
+
+    <section class="trust">
+
+        <div>
+            <span>🚚</span>
+            <h3>Free Delivery</h3>
+            <p>On selected orders</p>
+        </div>
+
+        <div>
+            <span>🔒</span>
+            <h3>Secure Payment</h3>
+            <p>100% secure checkout</p>
+        </div>
+
+        <div>
+            <span>↩</span>
+            <h3>Easy Returns</h3>
+            <p>Simple return policy</p>
+        </div>
+
+        <div>
+            <span>💬</span>
+            <h3>24/7 Support</h3>
+            <p>We're here to help</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section" id="categories">
+
+        <div class="section-heading">
+
+            <div>
+                <p>SHOP BY CATEGORY</p>
+                <h2>Explore Collections</h2>
+            </div>
+
+            <span>
+                Find something you'll love
+            </span>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category-card" onclick="filterCategory('Fashion')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=700&q=80"
+                    alt="Fashion"
+                >
+
+                <div>
+                    <h3>Fashion</h3>
+                    <p>Modern everyday styles</p>
+                </div>
+
+            </div>
+
+
+            <div class="category-card" onclick="filterCategory('Beauty')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"
+                    alt="Beauty"
+                >
+
+                <div>
+                    <h3>Beauty</h3>
+                    <p>Glow with confidence</p>
+                </div>
+
+            </div>
+
+
+            <div class="category-card" onclick="filterCategory('Electronics')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=700&q=80"
+                    alt="Electronics"
+                >
+
+                <div>
+                    <h3>Electronics</h3>
+                    <p>Smart technology</p>
+                </div>
+
+            </div>
+
+
+            <div class="category-card" onclick="filterCategory('Home')">
+
+                <img
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80"
+                    alt="Home"
+                >
+
+                <div>
+                    <h3>Home</h3>
+                    <p>Beautiful living spaces</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="section products-section" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <p>OUR COLLECTION</p>
+                <h2>Featured Products</h2>
+            </div>
+
+            <div class="filters">
+
+                <button class="filter-btn active"
+                    onclick="filterCategory('All', this)">
+                    All
+                </button>
+
+                <button class="filter-btn"
+                    onclick="filterCategory('Fashion', this)">
+                    Fashion
+                </button>
+
+                <button class="filter-btn"
+                    onclick="filterCategory('Beauty', this)">
+                    Beauty
+                </button>
+
+                <button class="filter-btn"
+                    onclick="filterCategory('Electronics', this)">
+                    Electronics
+                </button>
+
+                <button class="filter-btn"
+                    onclick="filterCategory('Home', this)">
+                    Home
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="products-grid" id="productsGrid"></div>
+
+    </section>
+
+
+    <!-- ================= PROMO ================= -->
+
+    <section class="promo">
+
+        <div>
+
+            <p>LIMITED TIME OFFER</p>
+
+            <h2>
+                Upgrade Your
+                Everyday Lifestyle
+            </h2>
+
+            <p>
+                Discover selected products with
+                special offers available for a limited time.
+            </p>
+
+            <a href="#products" class="btn light">
+                Shop Collection
+            </a>
+
+        </div>
+
+        <div class="promo-circle">
+            <strong>50%</strong>
+            <span>OFF</span>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about section" id="about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+                alt="Shopping"
+            >
+
+        </div>
+
+        <div class="about-content">
+
+            <p>ABOUT LUXORA</p>
+
+            <h2>
+                Shopping Made
+                Simple & Elegant
+            </h2>
+
+            <p>
+                LUXORA is a modern e-commerce concept created
+                to make online shopping simple, beautiful and
+                enjoyable.
+            </p>
+
+            <p>
+                We bring together fashion, beauty, electronics
+                and lifestyle products in one elegant shopping
+                experience.
+            </p>
+
+            <div class="about-points">
+
+                <span>✓ Carefully selected products</span>
+                <span>✓ Modern shopping experience</span>
+                <span>✓ Customer-focused service</span>
+                <span>✓ Secure and simple checkout</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <p>STAY UPDATED</p>
+
+        <h2>
+            Get the Latest Offers
+        </h2>
+
+        <p>
+            Subscribe to receive new product updates
+            and special offers.
+        </p>
+
+        <form onsubmit="subscribeUser(event)">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact section" id="contact">
+
+        <div>
+
+            <p>CONTACT US</p>
+
+            <h2>
+                We'd Love To
+                Hear From You
+            </h2>
+
+            <p>
+                Have a question about our products?
+                Send us a message and our team will
+                get back to you.
+            </p>
+
+        </div>
+
+        <form onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button class="btn primary" type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span>LUX</span>ORA
+                </div>
+
+                <p>
+                    Elegant products.
+                    Simple shopping.
+                    Better everyday living.
+                </p>
+
+                <div class="socials">
+                    <a href="#">f</a>
+                    <a href="#">𝕏</a>
+                    <a href="#">◎</a>
+                    <a href="#">in</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>Shop</h3>
+
+                <a href="#products">All Products</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">New Arrivals</a>
+                <a href="#products">Offers</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Help</h3>
+
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQs</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>📧 hello@luxora.com</p>
+                <p>📞 +91 98765 43210</p>
+                <p>📍 Tamil Nadu, India</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 LUXORA. All Rights Reserved.
+            </p>
+
+            <p>
+                Designed with ♥
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= CART PANEL ================= -->
+
+    <div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+    <aside class="side-panel" id="cartPanel">
+
+        <div class="panel-header">
+
+            <h2>Your Cart</h2>
+
+            <button onclick="closePanels()">✕</button>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+
+            <div>
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button onclick="checkout()">
+                Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= WISHLIST PANEL ================= -->
+
+    <aside class="side-panel" id="wishlistPanel">
+
+        <div class="panel-header">
+
+            <h2>Your Wishlist</h2>
+
+            <button onclick="closePanels()">✕</button>
+
+        </div>
+
+        <div id="wishlistItems"></div>
+
+    </aside>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast">
+        Product added to cart
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
